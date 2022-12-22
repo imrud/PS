@@ -35,6 +35,7 @@ def dijkstra(start):
     for j in graph[start]:      ## j는 (b, c)로 이루어짐
         distance[j[0]] = j[1]
 
+
     for i in range(n-1):
         ## 현재 최단 거리가 가장 짧은 노드 꺼내서 방문처리
         now = get_samllest_node()
@@ -52,9 +53,8 @@ dijkstra(start)
 
 ## 모든 노드로 가기 위한 최단 거리를 출력
 for i in range(1, n+1):
-    if distance[i] == INF:
-        print("INFINITY")   ## 도달한 최단거리 없음
-
-    else:
+    if distance[i] == INF:  ## 해당 노드의 최단경로에 도달하지 못함
+        print("INFINITY")
+    else:   ## 도달한 경우 거리 출력력
         print(distance[i])
     
